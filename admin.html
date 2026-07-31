@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080808">
+<title>Rare Spec | CMS</title>
+<style>
+:root{--bg:#080808;--panel:#111;--soft:#171717;--ink:#f4f1ea;--muted:#aaa69d;--line:rgba(255,255,255,.13);--gold:#c7a56a;--danger:#b96767;--ok:#7eb28c}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 85% 0,rgba(199,165,106,.09),transparent 28%),var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.hidden{display:none!important}.shell{min-height:100svh;display:grid;grid-template-columns:255px 1fr}.side{position:sticky;top:0;height:100svh;padding:28px 20px;border-right:1px solid var(--line);background:rgba(8,8,8,.94);backdrop-filter:blur(16px)}.brand{font:30px Georgia,serif;letter-spacing:.02em}.brand small{display:block;margin-top:7px;font:10px Arial,sans-serif;text-transform:uppercase;letter-spacing:.2em;color:var(--gold)}.nav{display:grid;gap:7px;margin-top:42px}.nav button{display:flex;gap:12px;align-items:center;width:100%;padding:13px 14px;border:1px solid transparent;background:transparent;color:#bbb;text-align:left}.nav button.active,.nav button:hover{border-color:var(--line);background:var(--soft);color:#fff}.side-foot{position:absolute;left:20px;right:20px;bottom:24px}.side-foot button{width:100%;padding:12px;background:transparent;border:1px solid var(--line);color:#ddd}.main{padding:38px clamp(22px,4vw,58px) 80px;min-width:0}.topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold)}h1,h2,h3{font-family:Georgia,serif;font-weight:400}h1{font-size:clamp(38px,5vw,66px);margin:9px 0 8px;line-height:1}.muted{color:var(--muted);line-height:1.6}.account{font-size:12px;color:#bbb;border:1px solid var(--line);padding:11px 14px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0}.stat{padding:22px;border:1px solid var(--line);background:linear-gradient(145deg,#121212,#0d0d0d)}.stat strong{display:block;font:34px Georgia,serif;margin-bottom:7px}.stat span{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#aaa}.panel{border:1px solid var(--line);background:rgba(17,17,17,.92);padding:26px;margin-top:18px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:22px}.panel h2{font-size:30px;margin:0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.full{grid-column:1/-1}label{display:grid;gap:8px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#bbb}input,textarea,select{width:100%;padding:14px;background:#0a0a0a;border:1px solid var(--line);color:#fff;outline:none}input:focus,textarea:focus,select:focus{border-color:var(--gold)}textarea{min-height:115px;resize:vertical}.btn{border:1px solid var(--gold);background:transparent;color:#fff;padding:13px 18px}.btn:hover{background:var(--gold);color:#080808}.btn.secondary{border-color:var(--line)}.btn.danger{border-color:rgba(185,103,103,.7);color:#e5b6b6}.actions{display:flex;gap:9px;flex-wrap:wrap}.status{min-height:22px;margin:14px 0 0;color:var(--gold)}.cars{display:grid;gap:13px}.car{display:grid;grid-template-columns:180px minmax(0,1fr) auto;gap:18px;align-items:center;padding:13px;border:1px solid var(--line);background:#0d0d0d}.car img{width:180px;height:112px;object-fit:cover;background:#171717}.car h3{font-size:23px;margin:0 0 8px}.car p{margin:0 0 9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.badge{display:inline-flex;padding:5px 8px;border:1px solid var(--line);font-size:9px;text-transform:uppercase;letter-spacing:.12em}.badge.live{border-color:rgba(126,178,140,.5);color:#a8d5b3}.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.gallery-item{border:1px solid var(--line);background:#0d0d0d;padding:10px}.gallery-item img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#171717}.gallery-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:10px 0}.gallery-actions{display:flex;gap:7px;flex-wrap:wrap}.gallery-actions .btn{padding:9px 11px;font-size:12px}.gallery-upload{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end}.login-wrap{min-height:100svh;display:grid;place-items:center;padding:24px}.login{width:min(480px,100%);padding:38px;border:1px solid var(--line);background:rgba(17,17,17,.96);box-shadow:0 30px 100px rgba(0,0,0,.5)}.login h1{font-size:50px}.login form{display:grid;gap:17px;margin-top:30px}.login .btn{width:100%}.notice{padding:12px 14px;border:1px solid rgba(199,165,106,.35);background:rgba(199,165,106,.07);color:#d7c29c;font-size:12px;line-height:1.5}.mobile-head,.mobile-nav{display:none}.section{display:none}.section.active{display:block}@media(max-width:980px){.shell{grid-template-columns:1fr}.side{display:none}.mobile-head{display:flex;position:sticky;top:0;z-index:20;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line);background:rgba(8,8,8,.96)}.mobile-head button{background:transparent;border:1px solid var(--line);color:#fff;padding:9px 12px}.mobile-nav{display:none;position:fixed;z-index:30;inset:61px 14px auto;padding:12px;background:#0d0d0d;border:1px solid var(--line)}.mobile-nav.open{display:grid}.main{padding-top:26px}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:980px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:690px){.gallery-grid{grid-template-columns:1fr}.gallery-upload{grid-template-columns:1fr}.topbar{display:block}.account{display:inline-block;margin-top:16px}.grid{grid-template-columns:1fr}.full{grid-column:auto}.car{grid-template-columns:1fr}.car img{width:100%;height:210px}.stats{grid-template-columns:1fr 1fr}.panel{padding:20px}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+window.RARE_SPEC_CONFIG = {
+  supabaseUrl: "https://izouwepfhaenzuapvmpb.supabase.co",
+  supabaseAnonKey: "sb_publishable_IfPA0eftqFVFXrbVwHkyuQ_pcCQQOLr"
+};
+</script>
+</head>
+<body>
+<div id="loginView" class="login-wrap">
+  <section class="login">
+    <div class="eyebrow">Beveiligde beheeromgeving</div>
+    <h1>Rare Spec</h1>
+    <p class="muted">Log in om het actuele autoaanbod en de carrouselinstellingen te beheren.</p>
+    <form id="loginForm">
+      <label>E-mailadres<input id="loginEmail" type="email" autocomplete="username" required></label>
+      <label>Wachtwoord<input id="loginPassword" type="password" autocomplete="current-password" required></label>
+      <button class="btn" type="submit">Inloggen</button>
+      <p id="loginStatus" class="status"></p>
+    </form>
+  </section>
+</div>
+<div id="appView" class="hidden">
+  <div class="mobile-head"><strong>Rare Spec</strong><button id="mobileMenu">Menu</button></div>
+  <div class="mobile-nav nav" id="mobileNav"></div>
+  <div class="shell">
+    <aside class="side">
+      <div class="brand">Rare Spec<small>Dashboard</small></div>
+      <nav class="nav" id="desktopNav"></nav>
+      <div class="side-foot"><button id="logout">Uitloggen</button></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><div class="eyebrow">Rare Spec beheer</div><h1 id="pageTitle">Overzicht</h1><p class="muted" id="pageSubtitle">Uw website in één oogopslag.</p></div><div class="account" id="accountEmail"></div></header>
+      <section class="section active" data-section="dashboard">
+        <div class="stats"><div class="stat"><strong id="statTotal">—</strong><span>Auto's totaal</span></div><div class="stat"><strong id="statLive">—</strong><span>Online</span></div><div class="stat"><strong id="statHidden">—</strong><span>Verborgen</span></div><div class="stat"><strong id="statImages">—</strong><span>Hoofdafbeeldingen</span></div></div>
+        <div class="panel"><div class="panel-head"><div><h2>Snelle start</h2><p class="muted">Voeg een auto toe of pas de carrousel aan.</p></div></div><div class="actions"><button class="btn" data-go="cars">Auto toevoegen</button><button class="btn secondary" data-go="settings">Carrousel instellen</button><a class="btn secondary" href="./" target="_blank" rel="noopener" style="text-decoration:none">Website bekijken</a></div></div>
+      </section>
+      <section class="section" data-section="cars">
+        <div class="panel"><div class="panel-head"><div><h2 id="formTitle">Auto toevoegen</h2><p class="muted">Upload één hoofdafbeelding en bepaal de volgorde.</p></div></div>
+          <form id="carForm" class="grid"><input id="carId" type="hidden"><input id="existingImage" type="hidden">
+            <label>Titel<input id="title" required placeholder="McLaren 570S Spider"></label>
+            <label>Volgorde<input id="sortOrder" type="number" value="0"></label>
+            <label class="full">Beschrijving<textarea id="description" placeholder="Korte, exclusieve omschrijving..."></textarea></label>
+            <label>Hoofdafbeelding<input id="image" type="file" accept="image/jpeg,image/png,image/webp"></label>
+            <label>Afbeeldingsomschrijving<input id="imageAlt" placeholder="Wordt voorlopig gebruikt als hulpmiddel"></label>
+            <label>Publicatie<select id="active"><option value="true">Zichtbaar</option><option value="false">Verborgen</option></select></label>
+            <div class="full actions"><button class="btn" type="submit">Opslaan</button><button class="btn secondary" type="button" id="cancelEdit">Annuleren</button></div>
+          </form><p class="status" id="carStatus"></p>
+        </div>
+        <div class="panel"><div class="panel-head"><div><h2>Auto's</h2><p class="muted">Wijzig, verberg of verwijder bestaande auto's.</p></div><button class="btn secondary" id="refreshCars">Vernieuwen</button></div><div id="carsList" class="cars"></div></div>
+      </section>
+      <section class="section" data-section="gallery">
+        <div class="panel">
+          <div class="panel-head"><div><div class="eyebrow">Fotobeheer</div><h2 id="galleryTitle">Foto's beheren</h2><p class="muted">Upload meerdere foto's, kies de hoofdfoto en bepaal de volgorde.</p></div><button class="btn secondary" type="button" id="backToCars">Terug naar auto's</button></div>
+          <div class="gallery-upload"><label>Nieuwe foto's<input id="galleryFiles" type="file" accept="image/jpeg,image/png,image/webp" multiple></label><button class="btn" type="button" id="uploadGallery">Foto's uploaden</button></div>
+          <p class="status" id="galleryStatus"></p>
+          <div id="galleryGrid" class="gallery-grid"></div>
+        </div>
+      </section>
+      <section class="section" data-section="content">
+        <div class="panel"><div class="panel-head"><div><div class="eyebrow">Website-inhoud</div><h2>Homepage-teksten</h2><p class="muted">Pas de belangrijkste teksten aan zonder de HTML te openen.</p></div></div>
+          <form id="contentForm" class="grid">
+            <label class="full">Hero titel<textarea id="contentHeroTitle" placeholder="U weet exact wat u zoekt."></textarea></label>
+            <label class="full">Hero intro<textarea id="contentHeroIntro"></textarea></label>
+            <label>No cure, no pay titel<input id="contentPromiseTitle"></label>
+            <label>No cure, no pay tekst<input id="contentPromiseText"></label>
+            <label class="full">Titel gevonden auto's<input id="contentShowcaseTitle"></label>
+            <label>Over Storm label<input id="contentAboutKicker"></label>
+            <label class="full">Over Storm titel<textarea id="contentAboutTitle"></textarea></label>
+            <label>Contact label<input id="contentContactKicker"></label>
+            <label>Contact titel<input id="contentContactTitle"></label>
+            <label class="full">Contact intro<textarea id="contentContactIntro"></textarea></label>
+            <div class="full"><button class="btn" type="submit">Teksten opslaan</button></div>
+          </form><p class="status" id="contentStatus"></p>
+        </div>
+      </section>
+      <section class="section" data-section="settings">
+        <div class="panel"><div class="panel-head"><div><h2>Carrousel</h2><p class="muted">Bepaal of auto's automatisch wisselen.</p></div></div>
+          <form id="settingsForm" class="grid"><label>Automatisch afspelen<select id="autoplay"><option value="true">Aan</option><option value="false">Uit</option></select></label><label>Interval in seconden<input id="interval" type="number" min="3" max="60" value="6"></label><div class="full"><button class="btn" type="submit">Instellingen opslaan</button></div></form><p class="status" id="settingsStatus"></p>
+        </div>
+      </section>
+      <section class="section" data-section="coming"><div class="panel"><div class="notice">Deze versie beheert auto's, hoofdafbeeldingen, zichtbaarheid, sortering en carrouselinstellingen. De openbare homepage blijft in deze oplevering ongewijzigd.</div></div></section>
+    </main>
+  </div>
+</div>
+<script>
+const config=window.RARE_SPEC_CONFIG||{};
+const sb=window.supabase.createClient(config.supabaseUrl,config.supabaseAnonKey);
+const $=id=>document.getElementById(id);let cars=[];let galleryCarId=null;let galleryImages=[];
+const esc=v=>String(v??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const navItems=[['dashboard','Overzicht'],['cars','Auto\'s'],['content','Website-teksten'],['settings','Carrousel'],['coming','Binnenkort']];
+function makeNav(){const html=navItems.map(([id,label],i)=>`<button class="${i===0?'active':''}" data-nav="${id}">${label}</button>`).join('');$('desktopNav').innerHTML=html;$('mobileNav').innerHTML=html;document.querySelectorAll('[data-nav]').forEach(b=>b.onclick=()=>showSection(b.dataset.nav));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>showSection(b.dataset.go));}
+const titles={dashboard:['Overzicht','Uw website in één oogopslag.'],cars:['Auto\'s','Beheer het aanbod dat op Rare Spec wordt getoond.'],gallery:['Foto\'s','Beheer meerdere afbeeldingen per auto.'],content:['Website-teksten','Pas de belangrijkste homepage-inhoud aan.'],settings:['Carrousel','Beheer de automatische weergave van auto\'s.'],coming:['Binnenkort','De volgende onderdelen van het Rare Spec CMS.']};
+function showSection(id){document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.dataset.section===id));document.querySelectorAll('[data-nav]').forEach(b=>b.classList.toggle('active',b.dataset.nav===id));$('pageTitle').textContent=titles[id][0];$('pageSubtitle').textContent=titles[id][1];$('mobileNav').classList.remove('open');scrollTo({top:0,behavior:'smooth'});}
+$('mobileMenu').onclick=()=>$('mobileNav').classList.toggle('open');
+function setText(id,text){$(id).textContent=text}
+async function init(){makeNav();const {data:{session}}=await sb.auth.getSession();toggle(session);if(session)await loadAll();sb.auth.onAuthStateChange((_event,session)=>{toggle(session);if(session)loadAll();});}
+function toggle(session){$('loginView').classList.toggle('hidden',!!session);$('appView').classList.toggle('hidden',!session);if(session)$('accountEmail').textContent=session.user.email||'Ingelogd';}
+$('loginForm').onsubmit=async e=>{e.preventDefault();setText('loginStatus','Bezig met inloggen…');const {error}=await sb.auth.signInWithPassword({email:$('loginEmail').value.trim(),password:$('loginPassword').value});setText('loginStatus',error?error.message:'');};
+$('logout').onclick=()=>sb.auth.signOut();
+async function loadAll(){await Promise.all([loadCars(),loadSettings(),loadContent()]);}
+async function loadCars(){setText('carStatus','');const {data,error}=await sb.from('cars').select('*').order('sort_order',{ascending:true}).order('created_at',{ascending:false});if(error){setText('carStatus',error.message);return;}cars=data||[];renderCars();updateStats();}
+function updateStats(){setText('statTotal',cars.length);setText('statLive',cars.filter(c=>c.is_published).length);setText('statHidden',cars.filter(c=>!c.is_published).length);setText('statImages',cars.filter(c=>c.cover_image_url).length);}
+function renderCars(){$('carsList').innerHTML=cars.map(c=>`<article class="car"><img src="${esc(c.cover_image_url||'')}" alt="${esc(c.title||'Auto van Rare Spec')}"><div><h3>${esc(c.title)}</h3><p class="muted">${esc(c.description||'Geen beschrijving')}</p><span class="badge ${c.is_published?'live':''}">${c.is_published?'Zichtbaar':'Verborgen'}</span> <span class="badge">Volgorde ${Number(c.sort_order)||0}</span></div><div class="actions"><button class="btn secondary" onclick="editCar('${c.id}')">Wijzigen</button><button class="btn secondary" onclick="openGallery('${c.id}')">Foto's</button><button class="btn danger" onclick="deleteCar('${c.id}')">Verwijderen</button></div></article>`).join('')||'<p class="muted">Nog geen auto’s toegevoegd.</p>';}
+window.editCar=id=>{const c=cars.find(x=>x.id===id);if(!c)return;$('formTitle').textContent='Auto wijzigen';$('carId').value=c.id;$('existingImage').value=c.cover_image_url||'';$('title').value=c.title||'';$('description').value=c.description||'';$('imageAlt').value=c.title||'';$('sortOrder').value=c.sort_order||0;$('active').value=String(c.is_published);showSection('cars');$('carForm').scrollIntoView({behavior:'smooth',block:'start'});};
+function resetForm(){$('carForm').reset();$('carId').value='';$('existingImage').value='';$('sortOrder').value='0';$('active').value='true';$('formTitle').textContent='Auto toevoegen';}
+$('cancelEdit').onclick=resetForm;
+$('carForm').onsubmit=async e=>{e.preventDefault();setText('carStatus','Bezig met opslaan…');let imageUrl=$('existingImage').value;let uploadedPath='';const file=$('image').files[0];if(file){const ext=(file.name.split('.').pop()||'jpg').toLowerCase();uploadedPath=`cars/${crypto.randomUUID()}.${ext}`;const {error:uploadError}=await sb.storage.from('car-images').upload(uploadedPath,file,{cacheControl:'3600',upsert:false});if(uploadError){setText('carStatus',uploadError.message);return;}imageUrl=sb.storage.from('car-images').getPublicUrl(uploadedPath).data.publicUrl;}if(!imageUrl){setText('carStatus','Kies eerst een hoofdafbeelding.');return;}const payload={title:$('title').value.trim(),description:$('description').value.trim(),cover_image_url:imageUrl,sort_order:Number($('sortOrder').value)||0,is_published:$('active').value==='true',updated_at:new Date().toISOString()};const id=$('carId').value;let savedCar=null;let error=null;if(id){const result=await sb.from('cars').update(payload).eq('id',id).select().single();savedCar=result.data;error=result.error;}else{const result=await sb.from('cars').insert(payload).select().single();savedCar=result.data;error=result.error;}if(error){setText('carStatus',error.message);return;}if(file&&savedCar){await sb.from('car_images').update({is_cover:false}).eq('car_id',savedCar.id);const {error:imageError}=await sb.from('car_images').insert({car_id:savedCar.id,image_url:imageUrl,storage_path:uploadedPath,alt_text:$('imageAlt').value.trim()||savedCar.title,sort_order:0,is_cover:true});if(imageError)console.warn(imageError.message);}resetForm();setText('carStatus','Auto succesvol opgeslagen.');await loadCars();};
+window.openGallery=async id=>{galleryCarId=id;const car=cars.find(c=>c.id===id);$('galleryTitle').textContent=car?`Foto's: ${car.title}`:"Foto's beheren";showSection('gallery');await loadGallery();};
+$('backToCars').onclick=()=>showSection('cars');
+async function loadGallery(){if(!galleryCarId)return;setText('galleryStatus',"Foto's laden…");const {data,error}=await sb.from('car_images').select('*').eq('car_id',galleryCarId).order('sort_order',{ascending:true}).order('created_at',{ascending:true});if(error){setText('galleryStatus',error.message);return;}galleryImages=data||[];setText('galleryStatus','');renderGallery();}
+function renderGallery(){const car=cars.find(c=>c.id===galleryCarId);if(!galleryImages.length){$('galleryGrid').innerHTML=`<div class="notice">Nog geen extra foto's. De huidige hoofdfoto blijft wel zichtbaar op de website.</div>`;return;}$('galleryGrid').innerHTML=galleryImages.map((img,index)=>`<article class="gallery-item"><img src="${esc(img.image_url)}" alt="${esc(img.alt_text||car?.title||'Auto')}"><div class="gallery-meta"><span class="badge ${img.is_cover?'live':''}">${img.is_cover?'Hoofdfoto':`Foto ${index+1}`}</span><span class="badge">Volgorde ${Number(img.sort_order)||0}</span></div><div class="gallery-actions"><button class="btn secondary" onclick="moveGalleryImage('${img.id}',-1)" ${index===0?'disabled':''}>←</button><button class="btn secondary" onclick="moveGalleryImage('${img.id}',1)" ${index===galleryImages.length-1?'disabled':''}>→</button><button class="btn secondary" onclick="setCoverImage('${img.id}')">Hoofdfoto</button><button class="btn danger" onclick="deleteGalleryImage('${img.id}')">Verwijderen</button></div></article>`).join('');}
+$('uploadGallery').onclick=async()=>{const files=[...$('galleryFiles').files];if(!galleryCarId||!files.length){setText('galleryStatus','Kies eerst één of meer foto\'s.');return;}setText('galleryStatus',`0 van ${files.length} geüpload…`);let nextOrder=galleryImages.length?Math.max(...galleryImages.map(i=>Number(i.sort_order)||0))+1:0;for(let i=0;i<files.length;i++){const file=files[i];const ext=(file.name.split('.').pop()||'jpg').toLowerCase();const path=`cars/${galleryCarId}/${crypto.randomUUID()}.${ext}`;const {error:uploadError}=await sb.storage.from('car-images').upload(path,file,{cacheControl:'3600',upsert:false});if(uploadError){setText('galleryStatus',uploadError.message);return;}const url=sb.storage.from('car-images').getPublicUrl(path).data.publicUrl;const isFirstCover=galleryImages.length===0&&i===0;const {error}=await sb.from('car_images').insert({car_id:galleryCarId,image_url:url,storage_path:path,alt_text:cars.find(c=>c.id===galleryCarId)?.title||'Auto van Rare Spec',sort_order:nextOrder+i,is_cover:isFirstCover});if(error){setText('galleryStatus',error.message);return;}if(isFirstCover)await sb.from('cars').update({cover_image_url:url,updated_at:new Date().toISOString()}).eq('id',galleryCarId);setText('galleryStatus',`${i+1} van ${files.length} geüpload…`);}$('galleryFiles').value='';await Promise.all([loadGallery(),loadCars()]);setText('galleryStatus','Foto\'s succesvol geüpload.');};
+window.setCoverImage=async imageId=>{const img=galleryImages.find(i=>i.id===imageId);if(!img)return;setText('galleryStatus','Hoofdfoto wijzigen…');await sb.from('car_images').update({is_cover:false}).eq('car_id',galleryCarId);const {error:e1}=await sb.from('car_images').update({is_cover:true}).eq('id',imageId);const {error:e2}=await sb.from('cars').update({cover_image_url:img.image_url,updated_at:new Date().toISOString()}).eq('id',galleryCarId);if(e1||e2){setText('galleryStatus',(e1||e2).message);return;}await Promise.all([loadGallery(),loadCars()]);setText('galleryStatus','Hoofdfoto aangepast.');};
+window.moveGalleryImage=async(imageId,direction)=>{const index=galleryImages.findIndex(i=>i.id===imageId);const target=index+direction;if(index<0||target<0||target>=galleryImages.length)return;const a=galleryImages[index],b=galleryImages[target];const aOrder=Number(a.sort_order)||index,bOrder=Number(b.sort_order)||target;const {error:e1}=await sb.from('car_images').update({sort_order:bOrder}).eq('id',a.id);const {error:e2}=await sb.from('car_images').update({sort_order:aOrder}).eq('id',b.id);if(e1||e2){setText('galleryStatus',(e1||e2).message);return;}await loadGallery();};
+window.deleteGalleryImage=async imageId=>{const img=galleryImages.find(i=>i.id===imageId);if(!img||!confirm('Wilt u deze foto verwijderen?'))return;const remaining=galleryImages.filter(i=>i.id!==imageId);const {error}=await sb.from('car_images').delete().eq('id',imageId);if(error){setText('galleryStatus',error.message);return;}if(img.storage_path)await sb.storage.from('car-images').remove([img.storage_path]);if(img.is_cover){const next=remaining[0];await sb.from('cars').update({cover_image_url:next?.image_url||'',updated_at:new Date().toISOString()}).eq('id',galleryCarId);if(next)await sb.from('car_images').update({is_cover:true}).eq('id',next.id);}await Promise.all([loadGallery(),loadCars()]);setText('galleryStatus','Foto verwijderd.');};
+window.deleteCar=async id=>{if(!confirm('Wilt u deze auto definitief verwijderen?'))return;const {error}=await sb.from('cars').delete().eq('id',id);if(error){setText('carStatus',error.message);return;}await loadCars();};
+$('refreshCars').onclick=loadCars;
+const contentDefaults={
+hero_title:'U weet exact wat u zoekt.',
+hero_intro:'Ik zorg dat het op uw oprit staat. Ik regel het volledige traject: van de wereldwijde zoektocht tot keuring, aankoop, import, transport en aflevering aan huis.',
+promise_title:'NO CURE, NO PAY',
+promise_text:'Vindt Rare Spec uw perfecte auto niet? Dan betaalt u niets.',
+showcase_title:'Gevonden én geleverd door Rare Spec.',
+about_kicker:'Het verhaal achter Rare Spec',
+about_title:'Ik wilde niet zomaar\neen auto kopen.\nIk wilde zeker weten\ndat het de juiste was.',
+contact_kicker:'Begin uw zoektocht',
+contact_title:'Welke auto zoekt u?',
+contact_intro:'Vertel mij zo precies mogelijk welke uitvoering u voor ogen heeft. Ik neem persoonlijk contact met u op om de zoekopdracht te bespreken.'
+};
+const contentFields={hero_title:'contentHeroTitle',hero_intro:'contentHeroIntro',promise_title:'contentPromiseTitle',promise_text:'contentPromiseText',showcase_title:'contentShowcaseTitle',about_kicker:'contentAboutKicker',about_title:'contentAboutTitle',contact_kicker:'contentContactKicker',contact_title:'contentContactTitle',contact_intro:'contentContactIntro'};
+async function loadContent(){const {data,error}=await sb.from('site_content').select('content_key,value').in('content_key',Object.keys(contentFields));if(error){setText('contentStatus',error.message);return;}const values={...contentDefaults};(data||[]).forEach(row=>values[row.content_key]=row.value);Object.entries(contentFields).forEach(([key,id])=>{if($(id))$(id).value=values[key]||'';});}
+$('contentForm').onsubmit=async e=>{e.preventDefault();setText('contentStatus','Bezig met opslaan…');const rows=Object.entries(contentFields).map(([key,id])=>({content_key:key,label:key,value:$(id).value.trim(),content_type:$(id).tagName==='TEXTAREA'?'textarea':'text',is_published:true,updated_at:new Date().toISOString()}));const {error}=await sb.from('site_content').upsert(rows,{onConflict:'content_key'});setText('contentStatus',error?error.message:'Homepage-teksten succesvol opgeslagen.');};
+async function loadSettings(){const {data,error}=await sb.from('site_settings').select('*').eq('id',1).single();if(error){setText('settingsStatus',error.message);return;}$('autoplay').value=String(data.carousel_autoplay);$('interval').value=Math.round(Number(data.carousel_interval||6000)/1000);}
+$('settingsForm').onsubmit=async e=>{e.preventDefault();setText('settingsStatus','Bezig met opslaan…');const {error}=await sb.from('site_settings').update({carousel_autoplay:$('autoplay').value==='true',carousel_interval:Number($('interval').value)*1000,updated_at:new Date().toISOString()}).eq('id',1);setText('settingsStatus',error?error.message:'Instellingen succesvol opgeslagen.');};
+init();
+</script>
+</body>
+</html>
